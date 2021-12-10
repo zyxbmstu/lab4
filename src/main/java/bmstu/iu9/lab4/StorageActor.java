@@ -15,7 +15,7 @@ public class StorageActor extends AbstractActor {
     private HashMap<Integer, ArrayList<Test>> storage = new HashMap<>();
 
     @Override
-    public Receive createRecieve() {
+    public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(StorageMessage.class, this::storeMessage)
                 .match(GetMessage.class, request -> {
