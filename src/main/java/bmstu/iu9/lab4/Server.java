@@ -12,6 +12,7 @@ import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import bmstu.iu9.lab4.message.GetMessage;
+import bmstu.iu9.lab4.message.PackageMessage;
 
 import java.io.IOException;
 import java.util.concurrent.Future;
@@ -38,10 +39,13 @@ public class Server {
 
     private Route createRoute() {
         return route(
-                get(() -> parameter("packageId"), (packageId) -> {
+                get(() -> parameter("packageId", (packageId) -> {
                     Future<Object> result = Patterns.ask(router, new GetMessage(Integer.parseInt(packageId)), 5000);
                     return completeOKWithFuture(result, Jackson.marshaller());
-                }
+                })),
+                post(() -> entity(Jackson.unmarshaller(PackageMessage.class), msg -> {
+                    
+                }))
         );
     }
 
