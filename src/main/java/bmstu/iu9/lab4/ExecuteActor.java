@@ -33,9 +33,11 @@ public class ExecuteActor extends AbstractActor {
                 msg.getTest().getExpectedResult(),
                 msg.getTest().getParams(),
                 testResult.equals(msg.getTest().getExpectedResult()));
-        ArrayList<Test>
 
-        return result;
+        ArrayList<Test> testResultsList = new ArrayList<>();
+        testResultsList.add(test);
+
+        return testResultsList;
     }
 
 }
