@@ -9,6 +9,7 @@ import bmstu.iu9.lab4.message.TestMessage;
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 import java.util.ArrayList;
 
 public class ExecuteActor extends AbstractActor {
@@ -22,7 +23,7 @@ public class ExecuteActor extends AbstractActor {
                         executeTest(msg)), self())).build();
     }
 
-    private ArrayList<Test> executeTest(TestMessage msg) {
+    private ArrayList<Test> executeTest(TestMessage msg) throws ScriptException, NoSuchMethodException {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName(LANGUAGE);
         engine.eval(msg.getScript());
         Invocable invocable = (Invocable) engine;
