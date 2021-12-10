@@ -35,7 +35,7 @@ public class PackageMessage {
     }
 
     public String getFunctionName() {
-        return getFunctionName();
+        return functionName;
     }
 
     public ArrayList<Test> getTests() {

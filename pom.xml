@@ -78,12 +78,5 @@
             <version>${akka-http.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-client</artifactId>
-            <version>2.10.1</version>
-        </dependency>
-
     </dependencies>
 </project>
-
