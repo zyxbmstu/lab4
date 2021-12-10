@@ -41,6 +41,8 @@ public class Test {
         return testName;
     }
 
-    
+    public String getExpectedResult() {
+        return expectedResult;
+    }
 
 }
