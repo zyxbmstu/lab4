@@ -8,7 +8,26 @@ public class TestMessage {
     private Test test;
 
     TestMessage(int packageId, String script, String functionName, Test test) {
-        this.pa
+        this.packageId = packageId;
+        this.script = script;
+        this.functionName = functionName;
+        this.test = test;
+    }
+
+    public int getPackageId() {
+        return packageId;
+    }
+
+    public String getScript() {
+        return script;
+    }
+
+    public String getFunctionName() {
+        return functionName;
+    }
+
+    public Test getTest() {
+        return test;
     }
 
 }
