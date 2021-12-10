@@ -22,7 +22,6 @@ import akka.http.javadsl.server.Route;
 
 import java.io.IOException;
 import java.util.concurrent.CompletionStage;
-import scala.concurrent.Future;
 
 import static akka.http.javadsl.server.Directives.*;
 
