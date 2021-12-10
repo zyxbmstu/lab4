@@ -1,6 +1,7 @@
 package bmstu.iu9.lab4;
 
 import akka.NotUsed;
+import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.server.Route;
@@ -16,8 +17,10 @@ import java.util.regex.Pattern;
 
 public class Server {
 
-    private Server(final ActorSystem system) {
+    private final ActorRef router;
 
+    private Server(ActorRef router) {
+        this.router = router;
     }
 
     public static void main(String[] args) throws IOException {
