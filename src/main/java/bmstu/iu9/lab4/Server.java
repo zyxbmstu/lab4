@@ -10,6 +10,7 @@ import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 
 import java.io.IOException;
+import java.util.concurrent.Future;
 
 public class Server {
 
@@ -30,7 +31,9 @@ public class Server {
 
     private Route createRoute() {
         return route(
-                get(() -> parameter("packageId")
+                get(() -> parameter("packageId"), (packageId) -> {
+                    Future<Object>
+                }
         );
     }
 
