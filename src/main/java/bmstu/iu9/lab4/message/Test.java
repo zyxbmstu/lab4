@@ -27,6 +27,7 @@ public class Test {
     public Test(@JsonProperty(TEST_NAME) String testName,
                 @JsonProperty(EXPECTED_RESULT) String expectedResult,
                 @JsonProperty(PARAMS) ArrayList<Integer> params) {
+        
 
     }
 
