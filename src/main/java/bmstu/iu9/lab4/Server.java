@@ -39,7 +39,7 @@ public class Server {
         return route(
                 get(() -> parameter("packageId"), (packageId) -> {
                     Future<Object> result = Patterns.ask(router, new GetMessage(Integer.parseInt(packageId)), 5000);
-                    return c
+                    return completeOKWithFuture(result, )
                 }
         );
     }
