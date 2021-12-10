@@ -60,11 +60,11 @@ public class Server {
     private Route createRoute() {
         return route(
                 get(() -> parameter("packageId", (packageId) -> {
-                    Future<Object> result = Patterns.ask(router, new GetMessage(Integer.parseInt(packageId)), 5000);
+                    Future<Object> result = Patterns.ask(storageActor, new GetMessage(Integer.parseInt(packageId)), 5000);
                     return completeOKWithFuture(result, Jackson.marshaller());
                 })),
                 post(() -> entity(Jackson.unmarshaller(PackageMessage.class), msg -> {
-                    router.tell(msg, ActorRef.noSender());
+                    PackageActor.tell(msg, ActorRef.noSender());
                     return complete("OK!");
                 }))
         );
