@@ -6,6 +6,7 @@ import bmstu.iu9.lab4.message.StorageMessage;
 import bmstu.iu9.lab4.message.Test;
 import bmstu.iu9.lab4.message.TestMessage;
 
+import javax.script.ScriptEngine;
 import java.util.ArrayList;
 
 public class ExecuteActor extends AbstractActor {
@@ -18,7 +19,7 @@ public class ExecuteActor extends AbstractActor {
     }
 
     private ArrayList<Test> executeTest(TestMessage msg) {
-        Scr
+        ScriptEngine engine = new Scr
     }
 
 }
