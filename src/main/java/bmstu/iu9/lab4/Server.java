@@ -30,7 +30,7 @@ public class Server {
 
     private Route createRoute() {
         return route(
-                get(() -> parameter("")
+                get(() -> parameter("packageId")
         );
     }
 
