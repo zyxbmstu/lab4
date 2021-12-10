@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class PackageMessage {
 
     private final String PACKAGE_ID = "packageId";
-    private final String SCRIPT = "script";
+    private final String SCRIPT = "jsScript";
     private final String FUNCTION_NAME = "functionName";
     private final String TESTS = "tests";
 
