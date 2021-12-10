@@ -44,7 +44,7 @@ public class Server {
                     return completeOKWithFuture(result, Jackson.marshaller());
                 })),
                 post(() -> entity(Jackson.unmarshaller(PackageMessage.class), msg -> {
-                    router
+                    router.tell(msg, A);
                 }))
         );
     }
