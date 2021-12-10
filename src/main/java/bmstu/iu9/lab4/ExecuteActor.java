@@ -14,9 +14,9 @@ public class ExecuteActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(TestMessage.class, msg -> sender().tell(new StorageMessage(msg.getPackageId(),
-                        executeTest(msg)))
+                        executeTest(msg)), self())).build();
     }
 
-    private ArrayList<Test> executeTest(StorageMessage msg)
+    private ArrayList<Test> executeTest(TestMessage msg)
 
 }
