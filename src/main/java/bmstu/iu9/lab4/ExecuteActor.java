@@ -17,6 +17,6 @@ public class ExecuteActor extends AbstractActor {
                         executeTest()))
     }
 
-    private ArrayList<Test> executeTest()
+    private ArrayList<Test> executeTest(StorageMessage msg)
 
 }
