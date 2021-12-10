@@ -37,7 +37,7 @@ public class Server {
     private Route createRoute() {
         return route(
                 get(() -> parameter("packageId"), (packageId) -> {
-                    Future<Object> result = Patterns.ask()
+                    Future<Object> result = Patterns.ask(router, new Ge)
                 }
         );
     }
