@@ -10,9 +10,12 @@ public class PackageActor extends AbstractActor{
         return ReceiveBuilder.create()
                 .match(PackageMessage.class, msg -> {
                     for (Test test : msg.getTests()) {
-                        
+                        sender().tell(new TestMessage(msg.getPackageId(),
+                                msg.getScript(),
+                                msg.getFunctionName(),
+                                test), self());
                     }
-                })
+                }).build();
     }
 
 }
