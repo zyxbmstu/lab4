@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class ExecuteActor extends AbstractActor {
 
-    private final String LANGUAGE = "js";
+    private final String LANGUAGE = "nashorn";
 
     @Override
     public Receive createReceive() {
