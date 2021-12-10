@@ -10,9 +10,11 @@ import akka.http.javadsl.server.Route;
 import akka.http.scaladsl.model.HttpRequest;
 import akka.http.scaladsl.model.HttpResponse;
 import akka.pattern.Patterns;
+import akka.routing.RoundRobinPool;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import bmstu.iu9.lab4.message.GetMessage;
+import bmstu.iu9.lab4.message.PackageActor;
 import bmstu.iu9.lab4.message.PackageMessage;
 
 import java.io.IOException;
@@ -27,8 +29,8 @@ public class Server {
 
     private Server(ActorSystem system) {
         storageActor = system.actorOf(Props.create(StorageActor.class), "storageActor");
-        packageActor = system.actorOf(Props.create(StorageActor.class), "packageActor");
-        executeActor = system.actorOf(Props.create(StorageActor.class), "executeActor");
+        packageActor = system.actorOf(Props.create(PackageActor.class), "packageActor");
+        executeActor = system.actorOf(new RoundRobinPool(5).props(Props.create(ExecuteActor.class)), "executeActor");
     }
 
     public static void main(String[] args) throws IOException {
