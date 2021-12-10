@@ -13,7 +13,7 @@ public class ExecuteActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(TestMessage.class, msg -> sender().tell(new StorageMessage(msg.getPackageId()),
+                .match(TestMessage.class, msg -> sender().tell(new StorageMessage(msg.getPackageId(),
                         executeTest(msg)))
     }
 
