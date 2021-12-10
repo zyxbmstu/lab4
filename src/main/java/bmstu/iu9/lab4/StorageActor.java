@@ -8,7 +8,7 @@ public class StorageActor extends AbstractActor {
     @Override
     public Receive createRecieve() {
         return ReceiveBuilder.create()
-                .match()
+                .match(StorageMessage.class)
     }
 
 }
