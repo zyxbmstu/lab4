@@ -1,5 +1,9 @@
 bmstu/iu9/lab4/message/Test.class
-bmstu/iu9/lab4/ExecuteActor.class
+bmstu/iu9/lab4/message/PackageMessage.class
+bmstu/iu9/lab4/Server.class
 bmstu/iu9/lab4/message/TestMessage.class
 bmstu/iu9/lab4/message/StorageMessage.class
 bmstu/iu9/lab4/message/PackageActor.class
+bmstu/iu9/lab4/ExecuteActor.class
+bmstu/iu9/lab4/message/GetMessage.class
+bmstu/iu9/lab4/StorageActor.class
