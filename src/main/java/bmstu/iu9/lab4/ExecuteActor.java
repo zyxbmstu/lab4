@@ -28,8 +28,8 @@ public class ExecuteActor extends AbstractActor {
 
     private ArrayList<Test> executeTest(TestMessage msg) throws ScriptException, NoSuchMethodException {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
-        System.out.println(engine);
 
+        System.out.println(engine);
         System.out.println(msg.getScript());
         System.out.println(msg.getScript().getClass());
 
