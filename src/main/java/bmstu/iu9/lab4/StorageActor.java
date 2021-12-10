@@ -22,8 +22,11 @@ public class StorageActor extends AbstractActor {
         if (!storage.containsKey(msg.getPackageId())) {
             storage.put(msg.getPackageId(), msg.getTest());
         } else {
-            ArrayList<Test> result = storage.get(msg.)
+            ArrayList<Test> result = storage.get(msg.getPackageId());
+            result.addAll(msg.getTest());
+            storage.replace(msg.getPackageId(), result);
         }
+        System.out.println("Result: " + msg);
     }
 
 }
