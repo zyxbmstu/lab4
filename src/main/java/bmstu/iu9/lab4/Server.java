@@ -15,6 +15,7 @@ import bmstu.iu9.lab4.message.GetMessage;
 
 import java.io.IOException;
 import java.util.concurrent.Future;
+import java.util.concurrent.CompletionStage;
 
 public class Server {
 
