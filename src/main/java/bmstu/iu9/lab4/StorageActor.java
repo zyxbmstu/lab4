@@ -22,7 +22,7 @@ public class StorageActor extends AbstractActor {
         if (!storage.containsKey(msg.getPackageId())) {
             storage.put(msg.getPackageId(), msg.getTest());
         } else {
-            ArrayList<Test> 
+            ArrayList<Test> result = storage.get(msg.)
         }
     }
 
