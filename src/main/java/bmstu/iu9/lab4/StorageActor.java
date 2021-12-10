@@ -11,6 +11,6 @@ public class StorageActor extends AbstractActor {
                 .match(StorageMessage.class,)
     }
 
-    
+    private void sto
 
 }
