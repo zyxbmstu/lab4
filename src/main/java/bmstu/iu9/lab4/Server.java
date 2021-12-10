@@ -4,11 +4,13 @@ import akka.NotUsed;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
+import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
+import akka.http.javadsl.ServerBinding;
 import akka.http.javadsl.marshallers.jackson.Jackson;
+import akka.http.javadsl.model.HttpRequest;
+import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.server.Route;
-import akka.http.scaladsl.model.HttpRequest;
-import akka.http.scaladsl.model.HttpResponse;
 import akka.pattern.Patterns;
 import akka.routing.RoundRobinPool;
 import akka.stream.ActorMaterializer;
@@ -18,8 +20,8 @@ import bmstu.iu9.lab4.message.PackageActor;
 import bmstu.iu9.lab4.message.PackageMessage;
 
 import java.io.IOException;
-import java.util.concurrent.Future;
 import java.util.concurrent.CompletionStage;
+import java.util.concurrent.Future;
 
 public class Server {
 
@@ -41,7 +43,18 @@ public class Server {
 
         Server app = new Server(system);
 
-        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = app.create
+        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = app.createRoute().flow(system, materializer);
+        final CompletionStage<ServerBinding> binding = http.bindAndHandle(
+                routeFlow,
+                ConnectHttp.toHost("localhost", 8080),
+                materializer
+        );
+
+        System.out.println("Server started!");
+        System.in.read();
+        binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> system.terminate());
+        System.out.println("Server stopped!");
+
     }
 
     private Route createRoute() {
