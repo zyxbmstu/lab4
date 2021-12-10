@@ -44,7 +44,8 @@ public class Server {
                     return completeOKWithFuture(result, Jackson.marshaller());
                 })),
                 post(() -> entity(Jackson.unmarshaller(PackageMessage.class), msg -> {
-                    router.tell(msg, A);
+                    router.tell(msg, ActorRef.noSender());
+                    return 
                 }))
         );
     }
