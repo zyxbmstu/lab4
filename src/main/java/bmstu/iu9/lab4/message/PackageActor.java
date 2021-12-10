@@ -9,7 +9,9 @@ public class PackageActor extends AbstractActor{
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(PackageMessage.class, msg -> {
-
+                    for (Test test : msg.getTests()) {
+                        
+                    }
                 })
     }
 
