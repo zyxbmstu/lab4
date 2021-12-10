@@ -9,7 +9,7 @@ public class ExecuteActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(TestMessage.class, msg -> S)
+                .match(TestMessage.class, msg -> sender().tell())
     }
 
 }
