@@ -33,6 +33,12 @@ public class Test {
         this.result = false;
     }
 
+    public ArrayList<Integer> getParams() {
+        return params;
+    }
 
+    public String getTestName() {
+        return thi
+    }
 
 }

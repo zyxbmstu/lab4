@@ -3,6 +3,7 @@ package bmstu.iu9.lab4;
 import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
 import bmstu.iu9.lab4.message.Test;
+import bmstu.iu9.lab4.message.TestMessage;
 
 import java.util.ArrayList;
 import java.util.HashMap;
