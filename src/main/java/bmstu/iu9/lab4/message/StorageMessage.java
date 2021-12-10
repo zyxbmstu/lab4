@@ -10,12 +10,17 @@ public class StorageMessage {
     private ArrayList<Test> tests;
 
     private final String PACKAGE_ID = "packageId";
-    private final String TESTS = "test";
+    private final String TESTS = "tests";
 
     public StorageMessage(@JsonProperty(PACKAGE_ID) int packageId,
                           @JsonProperty(TESTS)ArrayList<Test> tests) {
         this.packageId = packageId;
         this.tests = tests;
+    }
+
+    @Override
+    public String toString(){
+        return "packageId = " + packageId + " : " + tests;
     }
 
     public int getPackageId() {

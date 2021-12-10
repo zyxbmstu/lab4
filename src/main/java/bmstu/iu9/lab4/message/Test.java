@@ -55,4 +55,8 @@ public class Test {
         return expectedResult;
     }
 
+    @Override
+    public String toString() {
+        return "testName = " + testName + " result = " + result;
+    }
 }

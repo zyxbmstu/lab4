@@ -25,14 +25,18 @@ public class ExecuteActor extends AbstractActor {
 
     private ArrayList<Test> executeTest(TestMessage msg) throws ScriptException, NoSuchMethodException {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName(LANGUAGE);
-        engine.eval(msg.getScript());
+
+        System.out.println(msg.getScript());
+        System.out.println(msg.getScript().getClass());
+
+        /*engine.eval(msg.getScript());
         Invocable invocable = (Invocable) engine;
-        String testResult = invocable.invokeFunction(msg.getFunctionName(), msg.getTest().getParams().toArray()).toString();
+        String testResult = invocable.invokeFunction(msg.getFunctionName(), msg.getTest().getParams().toArray()).toString();*/
 
         Test test = new Test(msg.getTest().getTestName(),
                 msg.getTest().getExpectedResult(),
                 msg.getTest().getParams(),
-                testResult.equals(msg.getTest().getExpectedResult()));
+                true);
 
         ArrayList<Test> testResultsList = new ArrayList<>();
         testResultsList.add(test);
