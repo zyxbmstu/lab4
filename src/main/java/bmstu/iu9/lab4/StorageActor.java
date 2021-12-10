@@ -2,6 +2,7 @@ package bmstu.iu9.lab4;
 
 import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
+import bmstu.iu9.lab4.message.GetMessage;
 import bmstu.iu9.lab4.message.StorageMessage;
 import bmstu.iu9.lab4.message.Test;
 import bmstu.iu9.lab4.message.TestMessage;
