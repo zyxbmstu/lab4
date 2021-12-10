@@ -38,7 +38,9 @@ public class Test {
     }
 
     public String getTestName() {
-        return thi
+        return testName;
     }
+
+    
 
 }
