@@ -8,7 +8,9 @@ public class PackageActor extends AbstractActor{
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match()
+                .match(PackageMessage.class, msg -> {
+
+                })
     }
 
 }
