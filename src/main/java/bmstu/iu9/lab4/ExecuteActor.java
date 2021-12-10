@@ -28,7 +28,7 @@ public class ExecuteActor extends AbstractActor {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName(LANGUAGE);
 
         System.out.println(msg.getScript());
-        System.out.println(msg.getScript().getClass());
+        //System.out.println(msg.getScript().getClass());
 
         ScriptEngineManager manager = new ScriptEngineManager();
         List<ScriptEngineFactory> factories = manager.getEngineFactories();
