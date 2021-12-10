@@ -6,7 +6,7 @@ public class StorageActor extends AbstractActor {
 
     @Override
     public Receive createRecieve() {
-        
+        return 
     }
 
 }
