@@ -22,13 +22,13 @@ import java.util.concurrent.CompletionStage;
 public class Server {
 
     private ActorRef storageActor;
-    private ActorRef PackageActor;
-    private ActorRef ExecuteActor;
+    private ActorRef packageActor;
+    private ActorRef executeActor;
 
     private Server(ActorSystem system) {
         storageActor = system.actorOf(Props.create(StorageActor.class), "storageActor");
-        storageActor = system.actorOf(Props.create(StorageActor.class), "storageActor");
-        storageActor = system.actorOf(Props.create(StorageActor.class), "storageActor");
+        packageActor = system.actorOf(Props.create(StorageActor.class), "packageActor");
+        executeActor = system.actorOf(Props.create(StorageActor.class), "executeActor");
     }
 
     public static void main(String[] args) throws IOException {
