@@ -6,11 +6,13 @@ import akka.http.javadsl.Http;
 import akka.http.javadsl.server.Route;
 import akka.http.scaladsl.model.HttpRequest;
 import akka.http.scaladsl.model.HttpResponse;
+import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 
 import java.io.IOException;
 import java.util.concurrent.Future;
+import java.util.regex.Pattern;
 
 public class Server {
 
@@ -32,7 +34,7 @@ public class Server {
     private Route createRoute() {
         return route(
                 get(() -> parameter("packageId"), (packageId) -> {
-                    Future<Object> result = PA
+                    Future<Object> result = Patterns.ask()
                 }
         );
     }
