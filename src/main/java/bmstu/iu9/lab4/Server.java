@@ -66,7 +66,7 @@ public class Server {
                     return completeOKWithFuture(result, Jackson.marshaller());
                 })),
                 post(() -> entity(Jackson.unmarshaller(PackageMessage.class), msg -> {
-                    PackageActor.tell(msg, ActorRef.noSender());
+                    packageActor.tell(msg, ActorRef.noSender());
                     return complete("OK!");
                 }))
         );
