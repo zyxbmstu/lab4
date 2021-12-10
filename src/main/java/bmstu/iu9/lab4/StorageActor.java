@@ -17,7 +17,7 @@ public class StorageActor extends AbstractActor {
     }
 
     private void storeMessage(TestMessage msg) {
-        if 
+        if (!storage.containsKey())
     }
 
 }
