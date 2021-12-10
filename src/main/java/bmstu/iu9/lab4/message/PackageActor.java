@@ -1,4 +1,7 @@
 package bmstu.iu9.lab4.message;
 
-public class PackageActor {
+public class PackageActor extends {
+
+
+
 }
