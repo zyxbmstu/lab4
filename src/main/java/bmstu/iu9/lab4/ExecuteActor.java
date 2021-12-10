@@ -28,6 +28,9 @@ public class ExecuteActor extends AbstractActor {
         engine.eval(msg.getScript());
         Invocable invocable = (Invocable) engine;
         String result = invocable.invokeFunction(msg.getFunctionName(), msg.getTest().getParams().toArray()).toString();
+
+        ArrayList<Test> 
+
         return result;
     }
 
