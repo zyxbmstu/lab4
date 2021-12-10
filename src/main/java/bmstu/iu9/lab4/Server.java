@@ -45,7 +45,7 @@ public class Server {
                 })),
                 post(() -> entity(Jackson.unmarshaller(PackageMessage.class), msg -> {
                     router.tell(msg, ActorRef.noSender());
-                    return 
+                    return complete("OK!");
                 }))
         );
     }
