@@ -5,14 +5,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Test {
 
     private final String TEST_NAME = "testName";
-    private final String PARAMET = "testName";
-    private final String TEST_NAME = "testName";
+    private final String PARAMS = "params";
+    private final String RESULT = "result";
+    private final String EXPECTED_RESULT = "expectedResult";
 
     @JsonProperty(TEST_NAME)
     private String testName;
 
 
-    public Test(@JsonProperty(TEST_NAME) String testNAme,
-                )
+    public Test(@JsonProperty(TEST_NAME) String testName,
+                @JsonProperty(EXPECTED_RESULT) String expectedResult,
+                @JsonProperty(TEST_NAME) String testName)
 
 }
