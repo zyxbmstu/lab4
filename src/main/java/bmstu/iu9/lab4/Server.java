@@ -3,6 +3,7 @@ package bmstu.iu9.lab4;
 import akka.NotUsed;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
+import akka.actor.Props;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.server.Route;
@@ -20,10 +21,14 @@ import java.util.concurrent.CompletionStage;
 
 public class Server {
 
-    private final ActorRef router;
+    private ActorRef storageActor;
+    private ActorRef PackageActor;
+    private ActorRef ExecuteActor;
 
-    private Server(ActorRef router) {
-        this.router = router;
+    private Server(ActorSystem system) {
+        storageActor = system.actorOf(Props.create(StorageActor.class), "storageActor");
+        storageActor = system.actorOf(Props.create(StorageActor.class), "storageActor");
+        storageActor = system.actorOf(Props.create(StorageActor.class), "storageActor");
     }
 
     public static void main(String[] args) throws IOException {
