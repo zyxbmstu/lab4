@@ -21,7 +21,7 @@ import bmstu.iu9.lab4.message.PackageMessage;
 
 import java.io.IOException;
 import java.util.concurrent.CompletionStage;
-import java.util.concurrent.Future;
+import scala.concurrent.Future;
 
 import static akka.http.javadsl.server.Directives.*;
 
