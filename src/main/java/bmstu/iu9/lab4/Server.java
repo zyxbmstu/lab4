@@ -29,7 +29,9 @@ public class Server {
     }
 
     private Route createRoute() {
-        return route
+        return route(
+                get(() -> pa
+        );
     }
 
 }
