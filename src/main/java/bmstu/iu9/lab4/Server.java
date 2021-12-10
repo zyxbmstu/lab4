@@ -23,6 +23,8 @@ import java.io.IOException;
 import java.util.concurrent.CompletionStage;
 import java.util.concurrent.Future;
 
+import static akka.http.javadsl.server.Directives.*;
+
 public class Server {
 
     private ActorRef storageActor;
